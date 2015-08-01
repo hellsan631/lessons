@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pick a card</title>
+  </head>
+  <body>
+
+    <h2>Pick a card</h2>
+
+    <button onclick="pickACard()">Pick A Card</button>
+
+    <br/><br/>
+
+    <button onclick="console.log(randomNumbers)">Get Results</button>
+
+    <br/><br/>
+
+    <button onclick="addCard()">Add Card</button>
+
+    <script>
+
+      var cards = ['Ace', 'King', 'Queen', 'Jack', 10];
+      var fortune = ['Success', 'You have a big ass', 'Your Gay', 'Back Alley', 'Your age'];
+      var randomNumbers = [];
+
+      function pickACard(){
+        var random = Math.floor(Math.random() * cards.length);
+        var result = random + ' : ' + cards[random] + ' : ' + fortune[random];
+
+        randomNumbers.push(result);
+
+        alert(result);
+
+        return result;
+      }
+
+      function addCard(){
+        var card = prompt('What card do you want to add?');
+        var cardFortune = prompt('Whats the fortune?');
+
+        cards.push(card);
+        fortune.push(cardFortune);
+      }
+
+    </script>
+  </body>
+</html>
