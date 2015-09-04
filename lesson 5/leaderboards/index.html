@@ -12,62 +12,12 @@
 
     <button onclick="generateScores()">Generate Scores</button>
 
-    <script>
-      var scores = [];
-      var names = [];
+    <br/><br/>
 
-      function generateScores(){
+    <button onclick="getScores()">Get Scores</button>
 
-        addToLeaderboard('Bane');
-        addToLeaderboard('Batman');
-        addToLeaderboard('Dr. Freeze');
-        addToLeaderboard('Robin');
-        addToLeaderboard('Joker');
-        addToLeaderboard('Bruce');
+    <script src="bubblesort.js"></script>
+    <script src="leaderboard.js"></script>
 
-        getScores();
-      }
-
-      function getRandomScore(){
-        return Math.floor(Math.random() * 19000) + 1001;
-      }
-
-      function addToLeaderboard(name, score){
-        if(!score || score == 0){
-          score = getRandomScore();
-        }
-
-        names.unshift(name);
-        scores.unshift(score);
-
-        if(names.length > 5){
-          removeFromLeaderboard();
-        }
-      }
-
-      function removeFromLeaderboard(){
-        var name = names.pop();
-        var score = scores.pop();
-
-        console.log('Removing ' + name + ' | ' + score + ' from leaderboard');
-      }
-
-      function getScores(){
-        console.log(names[0] + ' | ' + scores[0]);
-        console.log(names[1] + ' | ' + scores[1]);
-        console.log(names[2] + ' | ' + scores[2]);
-        console.log(names[3] + ' | ' + scores[3]);
-        console.log(names[4] + ' | ' + scores[4]);
-      }
-
-      function addScore(){
-        var name = prompt('Whose name do you want to add?');
-        var score = prompt('Whats their score?');
-
-        addToLeaderboard(name, score);
-        getScores();
-      }
-
-    </script>
   </body>
 </html>
