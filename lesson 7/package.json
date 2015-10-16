@@ -1,0 +1,6 @@
+{
+  "name": "dungeon",
+  "dependencies": {
+    "prompt": "^0.2.14"
+  }
+}
